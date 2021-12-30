@@ -1,0 +1,26 @@
+import { useState } from 'react';
+
+const BudgetEdit = (props) => {
+    const [value, setValue] = useState(props.budget)
+    return (
+        <>
+            <input
+                required='required'
+                type='number'
+                className='form-control mr-3'
+                id='name'
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+            />
+
+            <button
+                type='submit'
+                className='btn btn-primary'
+                onClick={() => props.handleSaveClick(value)}
+            >Update
+            </button>
+        </>
+    );
+}
+
+export default BudgetEdit;
